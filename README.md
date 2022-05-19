@@ -117,17 +117,17 @@ Holy_Grail text: 1863 unique words
 ## 3.2
 For this part of the project, we simply iterated over the words again in the textfiles that had our preprocessed words, to determine how long they are, count how many of each length has occured and make a histogram for them. Since we had textfiles that already had one word per line seperated all we had to do was assign the word to the line we are currently on in the iteration (with line breaks `("\n")` removed) but also iterate over each letter of the word to make sure we don't count apostrophes or dashes as a letter for the length. once the length of the word was counted, it was added to a binary search tree with its length as its key, and frequency of occurence as its value. For each word, the code had to run the get() function first to see if the key is already there, so if it returned none, it added the key with a value of 1, and if the key already existed, it added 1 to it's value. 
 ### Holy Grail
-<img src="https://imgur.com/62ZmQQl" width="400"/>
+<img src="i.https://imgur.com/62ZmQQl.png" width="400"/>
 
 ### English News
-<img src="https://imgur.com/n9KIOah" width="400"/>
+<img src="https://i.imgur.com/n9KIOah.png" width="400"/>
 
 
 ## 3.3
 Here in the project, we were supposed to find the 10 most frequently occuring words (with atleast 5 letters) in each text file. We used similar code to part 3.2, but instead of the word's length, we added the word itself as the key to the trees and only if it's length was > 4. Once that was complete, we used a modified version of get_all_pairs() function to create a list of the tree and sort by descending value rather than ascending key. From there we had a function iterate over the first 10 key-value pairs of the list, and print them to present to us which words occured the most. 
 
-<img src="https://imgur.com/PSUzzm9" width="400"/>
-<img src="https://imgur.com/Pe3AeKY" width="400"/>
+<img src="https://i.imgur.com/PSUzzm9.png" width="400"/>
+<img src="https://i.imgur.com/Pe3AeKY.png" width="400"/>
 
 ## Part 4: Measuring time
 
@@ -145,14 +145,14 @@ for line in file:
 ```
 After that, the code printed every word in the list onto another textfile `20k_random_words.txt`, one word per line. Once that was done, we had another python file, `createBSTs.py` generate a BST with any size (number of nodes), depending on input, using the words from the processed english news textfile `english_words.txt`. The code used functions from table.py to iterate over each word and add it to a binary search tree and stopped once the desired size was reached. Using this code we make trees of sizes: 100, 200, 500, 1000, 5000, 10000, 20000, 40000, 80000. Initially we did not have trees of sizes 200 and 500, but after realizing that the biggest differences for our experiments happened in the lower sized trees, we decided to create those too and use them for the experiment. After that we had two last python files: `4.1_time.py` and `4.1_depth.py`. The latter simply measured the maximum depth of each tree and gave us the results. The `4.1_time.py` file, however, used the `get()` function from `table.py` to search the preselected 20k words for any given tree, and timed its result using the time module.
 
-<img src="https://imgur.com/Dq5R6ct" width="400"/>
+<img src="https://i.imgur.com/Dq5R6ct.png" width="400"/>
 
 The results were exactly as expected. The speed at which the depth of the tree grew as the size got bigger, rapidly decreased, which is the reason binary search trees are so efficient at storing huge amounts of data. The graph for the time to retrieve 20k words had the exact same signature of rapidly declining as the size grew. This is because the time to search is directly correlated with the maximum depth, as maximum depth also means how far the code will have to travel in the worst case scenario to grab data from it.
 
 ## 4.2
 For measuring time in the hashing system we used five files containing 1000, 2000, 3000, 4000 and 5000 words. We measured the time it took for the program to hase everything out and then we took the average of 5 tries. With the average time we could calculate the average amount of words per second for each file. We put that in a graph and there is a clear curve, showing that the programs words/sec slows down alot for larger files, as is expected. For max buckets size it was a slow increase, it is the most likely outcome but it there could be situations where the bucket size decreases with bigger files.  
 
-<img src="https://imgur.com/KBYSlJQ" width="400"/>
+<img src="https://i.imgur.com/KBYSlJQ.png" width="400"/>
 <img src="https://i.imgur.com/iFW9lRO.png" width="400"/>
 
 # Project conclusions and lessons learned
