@@ -153,12 +153,12 @@ The results were exactly as expected. The speed at which the depth of the tree g
 For measuring time in the hashing system we used five files containing 1000, 2000, 3000, 4000 and 5000 words. We measured the time it took for the program to hase everything out and then we took the average of 5 tries. With the average time we could calculate the average amount of words per second for each file. We put that in a graph and there is a clear curve, showing that the programs words/sec slows down alot for larger files, as is expected. For max buckets size it was a slow increase, it is the most likely outcome but it there could be situations where the bucket size decreases with bigger files.  
 
 <img src="https://imgur.com/KBYSlJQ" width="400"/>
-<img src="https://imgur.com/iFW9lRO" width="400"/>
+<img src="https://i.imgur.com/iFW9lRO.png" width="400"/>
 
 # Project conclusions and lessons learned
 ## Technical issues 
 
-### Learning git and mathplotlib with anaconda. 
+### Learning git and matplotlib with anaconda. 
 
 One of the first hurdles we faced was learning git, how to push and pull files. 
 We did not fully understand it for a while and it caused some issues with file management. 
